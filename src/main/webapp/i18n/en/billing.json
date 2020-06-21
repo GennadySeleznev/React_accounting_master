@@ -1,0 +1,27 @@
+{
+  "documentManagementApp": {
+    "billing": {
+      "home": {
+        "title": "Billings",
+        "createLabel": "Create a new Billing",
+        "createOrEditLabel": "Create or edit a Billing",
+        "notFound": "No Billings found"
+      },
+      "created": "A new Billing is created with identifier {{ param }}",
+      "updated": "A Billing is updated with identifier {{ param }}",
+      "deleted": "A Billing is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Billing {{ id }}?"
+      },
+      "detail": {
+        "title": "Billing"
+      },
+      "documentId": "Document Id",
+      "documentUrl": "Document Url",
+      "documentType": "Document Type",
+      "documentDeleted": "Document Deleted",
+      "createdDate": "Created Date",
+      "createdBy": "Created By"
+    }
+  }
+}

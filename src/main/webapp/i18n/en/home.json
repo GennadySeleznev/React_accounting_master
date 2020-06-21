@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Welcome Back",
+    "subtitle": "Today is {{date}}",
+    "logged": {
+      "message": "You are logged in as user \"{{username}}\"."
+    }
+  }
+}

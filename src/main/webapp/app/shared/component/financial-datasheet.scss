@@ -1,0 +1,188 @@
+$white: #ffffff;
+$black-100: #000000;
+$header: #194522;
+$level-1: #256b34;
+$level-2: #319246;
+$level-3: #3dba57;
+$level-4: #5ecb75;
+$primary-color: #d0f0c0;
+$level-n-even: $primary-color;
+$level-n-odd: $white;
+$border: $header;
+$fixed-scroller-width: 650px;
+$fixed-account-width: 500px;
+
+.financial-datasheet {
+  position: relative;
+  margin: 10px 0;
+
+  &-scroller {
+    margin-left: $fixed-scroller-width;
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding-bottom: 5px;
+    margin-right: 20px;
+  }
+
+  &-list {
+    border: none;
+    border-right: solid 1px #ddefef;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    .header {
+      th {
+        background-color: $header;
+        color: $white;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border: none;
+        min-width: 150px;
+        text-align: right;
+        padding: 5px 0;
+      }
+
+      th:last-child {
+        padding-right: 10px;
+      }
+
+      .account-sticky-col {
+        padding-left: 10px;
+        text-align: center;
+      }
+    }
+
+    .list-item {
+      td {
+        text-align: right;
+        white-space: nowrap;
+        padding: 2px 10px;
+      }
+
+      .account-sticky-col {
+        padding-left: 10px;
+        text-align: left;
+      }
+
+      .toggle-cell-icon {
+        cursor: pointer;
+        margin-right: 10px;
+
+        svg {
+          width: 10px;
+        }
+      }
+
+      .account-code-sticky-col {
+        width: 150px;
+      }
+    }
+
+    .account-sticky-col {
+      left: 0;
+      position: absolute;
+      top: auto;
+      width: $fixed-account-width !important;
+      text-transform: uppercase;
+    }
+
+    .account-code-sticky-col {
+      left: $fixed-account-width;
+      position: absolute;
+      top: auto;
+      text-transform: uppercase;
+      text-align: center !important;
+    }
+  }
+}
+
+.level-1 {
+  color: $white;
+  background-color: $level-1;
+  font-size: 17px;
+
+  .account-sticky-col,
+  .account-code-sticky-col {
+    color: $white;
+    background-color: $level-1;
+  }
+}
+
+.level-2 {
+  color: $white;
+  background-color: $level-2;
+  font-size: 15px;
+
+  .account-sticky-col,
+  .account-code-sticky-col {
+    color: $white;
+    background-color: $level-2;
+  }
+}
+
+.level-3 {
+  color: $white;
+  background-color: $level-3;
+  font-size: 15px;
+
+  .account-sticky-col,
+  .account-code-sticky-col {
+    color: $white;
+    background-color: $level-3;
+  }
+}
+
+.level-4 {
+  color: $white;
+  background-color: $level-4;
+  font-size: 15px;
+
+  .account-sticky-col,
+  .account-code-sticky-col {
+    color: $white;
+    background-color: $level-4;
+  }
+}
+
+.level-n-even {
+  background-color: $level-n-even;
+
+  .account-sticky-col,
+  .account-code-sticky-col {
+    background-color: $level-n-even;
+  }
+}
+
+.level-n-odd {
+  background-color: $level-n-odd;
+
+  .account-sticky-col,
+  .account-code-sticky-col {
+    background-color: $level-n-odd;
+  }
+}
+
+.parent-level-1 {
+  .account-sticky-col {
+    padding-left: 15px !important;
+  }
+}
+
+.parent-level-2 {
+  .account-sticky-col {
+    padding-left: 35px !important;
+  }
+}
+
+.parent-level-3 {
+  .account-sticky-col {
+    padding-left: 55px !important;
+  }
+}
+
+.parent-level-4 {
+  .account-sticky-col {
+    padding-left: 75px !important;
+  }
+}
