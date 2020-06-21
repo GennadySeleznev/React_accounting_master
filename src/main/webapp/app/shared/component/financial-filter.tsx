@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Row, Col } from "reactstrap";
-import Select, { components } from "react-select";
-import DatePicker from "react-datepicker";
-import "./financial-filter.scss";
+import React, { useState } from 'react';
+import { Row, Col } from 'reactstrap';
+import Select, { components } from 'react-select';
+import DatePicker from 'react-datepicker';
+import './financial-filter.scss';
 
 type Props = {
   onClickSearch?: Function;
@@ -17,6 +17,7 @@ const FinancialFilter: React.FC<Props> = (props) => {
     <Row className="financial-filter">
       <Col md="5">
         <Select
+          className="financial-filter__select"
           closeMenuOnSelect={false}
           components={<components.MultiValueContainer {...props} />}
           isMulti

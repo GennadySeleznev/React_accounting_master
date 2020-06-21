@@ -8,6 +8,8 @@
       display: flex;
       min-height: 60px;
       padding: 10px 10px 10px 0;
+      font-family: 'Montserrat';
+      font-size: 16px;
 
       &-moveHandle {
         height: auto;
@@ -80,8 +82,6 @@
   }
 
   .button-footer {
-    margin-top: 20px;
-    padding-top: 20px;
     border-top: 1px solid #777777;
   }
 }

@@ -1,20 +1,20 @@
 /* eslint-disable react/no-multi-comp */
-import React, { useState, useEffect } from "react";
-import { Col, Row } from "reactstrap";
-import { DndProvider, DragSource } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import SortableTree, { removeNodeAtPath } from "react-sortable-tree";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowsAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { isNil, cloneDeep } from "lodash";
-import DragContainer from "./drag-container";
+import React, { useState, useEffect } from 'react';
+import { Col, Row } from 'reactstrap';
+import { DndProvider, DragSource } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { isNil, cloneDeep } from 'lodash';
+import DragContainer from './drag-container';
 
 type Props = {
   baseList?: Array<any>;
   configuredList?: Array<any>;
 };
 
-const externalNodeType = "yourNodeType";
+const externalNodeType = 'yourNodeType';
 const externalNodeSpec = {
   beginDrag: (componentProps) => ({ node: { ...componentProps.node } }),
 };
@@ -40,7 +40,7 @@ class externalNodeBaseComponent extends React.Component {
         </div>
       </div>,
       {
-        dropEffect: "copy",
+        dropEffect: 'copy',
       }
     );
   }

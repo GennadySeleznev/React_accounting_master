@@ -31,64 +31,81 @@ export const App = (props: IAppProps) => {
   useEffect(() => {
     props.getSession();
     if (props.isAuthenticated) {
-       props.getProfile();
+      props.getProfile();
     }
   }, []);
 
   const paddingTop = '60px';
   return (
     <Router basename={baseHref}>
-      {
-        props.loading ?
-        <Card><CardBody><i className="fas fa-spinner fa-spin"></i>Loading ... </CardBody></Card>
-        :
+      {props.loading ? (
+        <Card>
+          <CardBody>
+            <i className="fas fa-spinner fa-spin"></i>Loading ...{' '}
+          </CardBody>
+        </Card>
+      ) : (
         <>
-      {!props.isAuthenticated?
-      <><ToastContainer position={toast.POSITION.TOP_LEFT} className="toastify-container" toastClassName="toastify-toast" />
-      <PublicPage/>
-      </>
-      :
-      <div className="app-container" style={{ paddingTop }}>
-        <ToastContainer position={toast.POSITION.TOP_LEFT} className="toastify-container" toastClassName="toastify-toast" />
-        <ErrorBoundary>
-          <Header
-            isAuthenticated={props.isAuthenticated}
-            isAdmin={props.isAdmin}
-            isSysadmin={props.isSysadmin}
-            currentLocale={props.currentLocale}
-            onLocaleChange={props.setLocale}
-            ribbonEnv={props.ribbonEnv}
-            isInProduction={props.isInProduction}
-            isSwaggerEnabled={props.isSwaggerEnabled}
-          />
-        </ErrorBoundary>
-        <div className="container-fluid view-container" id="app-view-container">
-          <Card className="jh-card">
-            <CardBody>
-            <ErrorBoundary>
-              <AppRoutes />
-            </ErrorBoundary>
-            </CardBody>
-          </Card>
-          <Footer />
-        </div>
-      </div>
-      }
-      </>
-      }
+          {!props.isAuthenticated ? (
+            <>
+              <ToastContainer
+                position={toast.POSITION.TOP_LEFT}
+                className="toastify-container"
+                toastClassName="toastify-toast"
+              />
+              <PublicPage />
+            </>
+          ) : (
+            <div className="app-container" style={{ paddingTop }}>
+              <ToastContainer
+                position={toast.POSITION.TOP_LEFT}
+                className="toastify-container"
+                toastClassName="toastify-toast"
+              />
+              <ErrorBoundary>
+                <Header
+                  isAuthenticated={props.isAuthenticated}
+                  isAdmin={props.isAdmin}
+                  isSysadmin={props.isSysadmin}
+                  currentLocale={props.currentLocale}
+                  onLocaleChange={props.setLocale}
+                  ribbonEnv={props.ribbonEnv}
+                  isInProduction={props.isInProduction}
+                  isSwaggerEnabled={props.isSwaggerEnabled}
+                />
+              </ErrorBoundary>
+              <div className="app-main-container" id="app-view-container">
+                <ErrorBoundary>
+                  <AppRoutes />
+                </ErrorBoundary>
+
+                {/* <Footer /> */}
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </Router>
   );
 };
 
-const mapStateToProps = ({ authentication, applicationProfile, locale }: IRootState) => ({
+const mapStateToProps = ({
+  authentication,
+  applicationProfile,
+  locale,
+}: IRootState) => ({
   currentLocale: locale.currentLocale,
   isAuthenticated: authentication.isAuthenticated,
-  isAdmin: hasAnyAuthority(authentication.account.authorities, [AUTHORITIES.ADMIN]),
-  isSysadmin: hasAnyAuthority(authentication.account.authorities, [AUTHORITIES.SYSADMIN]),
+  isAdmin: hasAnyAuthority(authentication.account.authorities, [
+    AUTHORITIES.ADMIN,
+  ]),
+  isSysadmin: hasAnyAuthority(authentication.account.authorities, [
+    AUTHORITIES.SYSADMIN,
+  ]),
   ribbonEnv: applicationProfile.ribbonEnv,
   isInProduction: applicationProfile.inProduction,
   isSwaggerEnabled: applicationProfile.isSwaggerEnabled,
-  loading: authentication.loading
+  loading: authentication.loading,
 });
 
 const mapDispatchToProps = { setLocale, getSession, getProfile };

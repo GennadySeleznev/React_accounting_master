@@ -11,10 +11,12 @@ $level-n-odd: $white;
 $border: $header;
 $fixed-scroller-width: 650px;
 $fixed-account-width: 500px;
+$font-family: 'Montserrat';
 
 .financial-datasheet {
   position: relative;
   margin: 10px 0;
+  font-family: $font-family;
 
   &-scroller {
     margin-left: $fixed-scroller-width;
@@ -22,6 +24,7 @@ $fixed-account-width: 500px;
     overflow-y: visible;
     padding-bottom: 5px;
     margin-right: 20px;
+    font-family: $font-family;
   }
 
   &-list {
@@ -29,10 +32,13 @@ $fixed-account-width: 500px;
     border-right: solid 1px #ddefef;
     border-collapse: separate;
     border-spacing: 0;
+    font-family: $font-family;
 
     .header {
+      font-family: $font-family;
       th {
         background-color: $header;
+        font-family: $font-family;
         color: $white;
         font-weight: 600;
         letter-spacing: 1px;
@@ -45,9 +51,11 @@ $fixed-account-width: 500px;
 
       th:last-child {
         padding-right: 10px;
+        font-family: $font-family;
       }
 
       .account-sticky-col {
+        font-family: $font-family;
         padding-left: 10px;
         text-align: center;
       }
@@ -58,16 +66,19 @@ $fixed-account-width: 500px;
         text-align: right;
         white-space: nowrap;
         padding: 2px 10px;
+        font-family: $font-family;
       }
 
       .account-sticky-col {
         padding-left: 10px;
+        font-family: $font-family;
         text-align: left;
       }
 
       .toggle-cell-icon {
         cursor: pointer;
         margin-right: 10px;
+        font-family: $font-family;
 
         svg {
           width: 10px;
@@ -76,6 +87,7 @@ $fixed-account-width: 500px;
 
       .account-code-sticky-col {
         width: 150px;
+        font-family: $font-family;
       }
     }
 
@@ -85,6 +97,7 @@ $fixed-account-width: 500px;
       top: auto;
       width: $fixed-account-width !important;
       text-transform: uppercase;
+      font-family: $font-family;
     }
 
     .account-code-sticky-col {
@@ -93,6 +106,7 @@ $fixed-account-width: 500px;
       top: auto;
       text-transform: uppercase;
       text-align: center !important;
+      font-family: $font-family;
     }
   }
 }
@@ -101,35 +115,43 @@ $fixed-account-width: 500px;
   color: $white;
   background-color: $level-1;
   font-size: 17px;
+  font-family: $font-family;
 
   .account-sticky-col,
   .account-code-sticky-col {
     color: $white;
     background-color: $level-1;
+    font-family: $font-family;
   }
 }
 
 .level-2 {
   color: $white;
+  font-family: $font-family;
   background-color: $level-2;
   font-size: 15px;
+  font-family: $font-family;
 
   .account-sticky-col,
   .account-code-sticky-col {
     color: $white;
     background-color: $level-2;
+    font-family: $font-family;
   }
 }
 
 .level-3 {
   color: $white;
+  font-family: $font-family;
   background-color: $level-3;
   font-size: 15px;
+  font-family: $font-family;
 
   .account-sticky-col,
   .account-code-sticky-col {
     color: $white;
     background-color: $level-3;
+    font-family: $font-family;
   }
 }
 
@@ -137,52 +159,65 @@ $fixed-account-width: 500px;
   color: $white;
   background-color: $level-4;
   font-size: 15px;
+  font-family: $font-family;
 
   .account-sticky-col,
   .account-code-sticky-col {
     color: $white;
     background-color: $level-4;
+    font-family: $font-family;
   }
 }
 
 .level-n-even {
   background-color: $level-n-even;
+  font-family: $font-family;
 
   .account-sticky-col,
   .account-code-sticky-col {
     background-color: $level-n-even;
+    font-family: $font-family;
   }
 }
 
 .level-n-odd {
   background-color: $level-n-odd;
+  font-family: $font-family;
 
   .account-sticky-col,
   .account-code-sticky-col {
     background-color: $level-n-odd;
+    font-family: $font-family;
   }
 }
 
 .parent-level-1 {
   .account-sticky-col {
     padding-left: 15px !important;
+    font-family: $font-family;
   }
 }
 
 .parent-level-2 {
   .account-sticky-col {
     padding-left: 35px !important;
+    font-family: $font-family;
   }
 }
 
 .parent-level-3 {
   .account-sticky-col {
     padding-left: 55px !important;
+    font-family: $font-family;
   }
 }
 
 .parent-level-4 {
   .account-sticky-col {
     padding-left: 75px !important;
+    font-family: $font-family;
   }
+}
+.header__acount-style {
+  font-family: $font-family;
 }

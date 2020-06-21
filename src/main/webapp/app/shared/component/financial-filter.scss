@@ -12,5 +12,24 @@
         border-radius: 4px;
       }
     }
+    @media screen and (max-width: 768px) {
+      margin-left: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Balance Sheet
+.financial-filter__select {
+  font-family: 'Montserrat';
+  font-size: 15px;
+  color: black;
+  display: block;
+  font-weight: 300;
+  width: 100%;
+  border-radius: 0px;
+  border: 0.5px solid grey;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 10px;
   }
 }

@@ -7,9 +7,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { NavLink as Link } from 'react-router-dom';
 import LoadingBar from 'react-redux-loading-bar';
+import AppBar from '../header/AppBar';
+import Sidebar from '../Sidebar/Sidebar';
 
 import { Home, Brand } from './header-components';
-import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu, DocumentMenu, ExpatriateMenu } from '../menus';
+import {
+  AdminMenu,
+  EntitiesMenu,
+  AccountMenu,
+  LocaleMenu,
+  DocumentMenu,
+  ExpatriateMenu,
+} from '../menus';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
@@ -25,7 +34,7 @@ export interface IHeaderProps {
 const Header = (props: IHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLocaleChange = event => {
+  const handleLocaleChange = (event) => {
     const langKey = event.target.value;
     Storage.session.set('locale', langKey);
     props.onLocaleChange(langKey);
@@ -46,20 +55,25 @@ const Header = (props: IHeaderProps) => {
 
   return (
     <div id="app-header">
+      <AppBar />
+
       {renderDevRibbon()}
       <LoadingBar className="loading-bar" />
-      <Navbar dark expand="sm" fixed="top" className="bg-dark">
+
+      {/* <Navbar dark expand="sm" fixed="top" className="bg-dark">
         <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
         <Brand />
         <Collapse isOpen={menuOpen} navbar>
           <Nav id="header-tabs" className="ml-auto" navbar>
             <Home />
             {props.isAuthenticated && <EntitiesMenu />}
-            {props.isAuthenticated && props.isAdmin && <AdminMenu isSysadmin={props.isSysadmin}/>}
+            {props.isAuthenticated && props.isAdmin && (
+              <AdminMenu isSysadmin={props.isSysadmin} />
+            )}
             <AccountMenu isAuthenticated={props.isAuthenticated} />
           </Nav>
         </Collapse>
-      </Navbar>
+      </Navbar> */}
     </div>
   );
 };

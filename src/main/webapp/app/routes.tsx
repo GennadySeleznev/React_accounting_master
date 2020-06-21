@@ -17,12 +17,15 @@ import { AUTHORITIES } from 'app/config/constants';
 
 const Account = Loadable({
   loader: () => import(/* webpackChunkName: "account" */ 'app/modules/account'),
-  loading: () => <div>loading ...</div>
+  loading: () => <div>loading ...</div>,
 });
 
 const Admin = Loadable({
-  loader: () => import(/* webpackChunkName: "administration" */ 'app/modules/administration'),
-  loading: () => <div>loading ...</div>
+  loader: () =>
+    import(
+      /* webpackChunkName: "administration" */ 'app/modules/administration'
+    ),
+  loading: () => <div>loading ...</div>,
 });
 
 const Routes = () => (
@@ -30,11 +33,23 @@ const Routes = () => (
     <Switch>
       <ErrorBoundaryRoute path="/login" component={Login} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
-      <PrivateRoute path="/admin" component={Admin} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
-      <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
+      <PrivateRoute
+        path="/admin"
+        component={Admin}
+        hasAnyAuthorities={[AUTHORITIES.ADMIN]}
+      />
+      <PrivateRoute
+        path="/account"
+        component={Account}
+        hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]}
+      />
 
       <ErrorBoundaryRoute path="/" exact component={Home} />
-      <PrivateRoute path="/" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
+      <PrivateRoute
+        path="/"
+        component={Entities}
+        hasAnyAuthorities={[AUTHORITIES.USER]}
+      />
       <ErrorBoundaryRoute component={PageNotFound} />
     </Switch>
   </div>

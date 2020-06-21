@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import { Redirect, Link, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Button, Label, Alert, Row, Col, Card, CardBody, Container, CardGroup } from 'reactstrap';
+import {
+  Button,
+  Label,
+  Alert,
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Container,
+  CardGroup,
+} from 'reactstrap';
 import { IRootState } from 'app/shared/reducers';
-import { AvForm, AvField, AvGroup, AvInput } from 'availity-reactstrap-validation';
+import {
+  AvForm,
+  AvField,
+  AvGroup,
+  AvInput,
+} from 'availity-reactstrap-validation';
 import { Translate, translate } from 'react-jhipster';
 import { login } from 'app/shared/reducers/authentication';
 import ErrorBoundary from 'app/shared/error/error-boundary';
@@ -25,28 +40,37 @@ export class PublicPage extends React.Component<IPublicPageProps> {
   render() {
     const { loginError, isAuthenticated } = this.props;
     return (
-      <div className="app flex-row align-items-center landing">
-      <Container>
-        <Row className="justify-content-center">
-      <ErrorBoundary>
-        <Switch>
-              <ErrorBoundaryRoute path="/account/register" component={Register} />
-              <ErrorBoundaryRoute path="/account/activate/:key?" component={Activate} />
-              <ErrorBoundaryRoute path="/account/reset/request" component={PasswordResetInit} />
-              <ErrorBoundaryRoute path="/account/reset/finish/:key?" component={PasswordResetFinish} />
-              <ErrorBoundaryRoute path="/" exact component={Landing} />
-        </Switch>
-      </ErrorBoundary>
-        </Row>
-        </Container>
-      </div>
+      // <div className="app flex-row align-items-center landing">
+      // <Container>
+      <Row className="justify-content-center">
+        <ErrorBoundary>
+          <Switch>
+            <ErrorBoundaryRoute path="/account/register" component={Register} />
+            <ErrorBoundaryRoute
+              path="/account/activate/:key?"
+              component={Activate}
+            />
+            <ErrorBoundaryRoute
+              path="/account/reset/request"
+              component={PasswordResetInit}
+            />
+            <ErrorBoundaryRoute
+              path="/account/reset/finish/:key?"
+              component={PasswordResetFinish}
+            />
+            <ErrorBoundaryRoute path="/" exact component={Landing} />
+          </Switch>
+        </ErrorBoundary>
+      </Row>
+      // </Container>
+      // </div>
     );
   }
 }
 
 const mapStateToProps = ({ authentication }: IRootState) => ({
   isAuthenticated: authentication.isAuthenticated,
-  loginError: authentication.loginError
+  loginError: authentication.loginError,
 });
 
 const mapDispatchToProps = { login };
@@ -54,7 +78,4 @@ const mapDispatchToProps = { login };
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PublicPage);
+export default connect(mapStateToProps, mapDispatchToProps)(PublicPage);

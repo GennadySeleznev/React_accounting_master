@@ -1,7 +1,7 @@
-import React from "react";
-import { Row, Col } from "reactstrap";
-import "./page-header.scss";
-import { Translate } from "react-jhipster";
+import React from 'react';
+import { Row, Col } from 'reactstrap';
+import './page-header.scss';
+import { Translate } from 'react-jhipster';
 
 type Props = {
   titleKey: string;
@@ -10,7 +10,7 @@ type Props = {
 
 const PageHeader: React.FC<Props> = (props) => {
   return (
-    <Row className="page-header">
+    <Row className="password__title page-header">
       <Col className="page-header-title">
         <Translate contentKey={props.titleKey} />
       </Col>
